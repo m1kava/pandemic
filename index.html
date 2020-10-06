@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <?php include('lib/head.php'); ?>
+    <div w3-include-html="lib/head.html"></div> 
+
     <meta http-equiv="refresh" content="300">
     <title>კორონა ვირუსის სტატისტიკა</title>
     <meta name="og:title" property="og:title" content="კორონა ვირუსის სტატისტიკა">
@@ -9,7 +10,7 @@
     <meta property="og:description" content="განახლებადი სტატისტიკა - დაავადებული, გამოჯანმრთელებული, გარდაცვლილი, კრიტიკული და სხვა...">
     <meta property="og:image" content="https://scontent.fkut1-1.fna.fbcdn.net/v/t1.0-9/90558519_108863944089497_5908640153248727040_o.jpg?_nc_cat=109&_nc_sid=dd9801&_nc_ohc=9H1J3nFAF_MAX8MfG4E&_nc_ht=scontent.fkut1-1.fna&oh=a577f87f653340175b4ead6f06018544&oe=5E9F61FF">
     <meta property="og:url" content="https://pandemic.ge">
-
+    <script src="http://www.w3schools.com/lib/w3data.js"></script>
     </head>
 
     <body class="sb-nav-fixed" onload="hideLoadingDiv()">
@@ -17,7 +18,7 @@
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script>
         <!-- <div id="layoutSidenav">
             <div id="layoutSidenav_content"> -->
-            <?php include('lib/nav.php'); ?>
+                <div w3-include-html="lib/nav.html"></div> 
 
                 <main>
                     <div class="container shadow"><br>
@@ -142,7 +143,7 @@
                             </div>
 
                             <div class="col-xl-4">
-                                <?php include('lib/aside.php'); ?>
+                                <div w3-include-html="lib/aside.html"></div> 
                             </div>
                         </div>
                         <div class="sharethis-inline-share-buttons"></div><br>
@@ -156,7 +157,7 @@
                     </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">
-                    <?php include('lib/footer.php'); ?>
+                    <div w3-include-html="lib/footer.html"></div> 
                 </footer>
             <!-- </div>
         </div> -->
@@ -164,9 +165,12 @@
             <div class="loader">იტვირთება</div>
         </div>
         
-        <?php include('lib/app.php'); ?>
+        <div w3-include-html="lib/app.html"></div> 
 
         <script src="assets/js/load.js"></script>
         <script src="assets/js/global.js"></script>
+        <script>
+            w3IncludeHTML();
+        </script>       
     </body>
 </html>
