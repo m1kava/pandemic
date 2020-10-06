@@ -1,0 +1,233 @@
+* {
+    font-family: "BPG ExtraSquare Mtavruli", sans-serif;
+}
+
+.georgia {
+    display: block;
+    text-align: center;
+    font-size: 150%;
+}
+
+#statForGeorgia {
+    text-align: center;
+}
+
+main > .container {
+  background-color: #fff;
+}
+
+body {
+  background-image: url('../img/bg6.png');
+ background-attachment: fixed;  
+}
+/* .cust-table {
+    
+} */
+
+.info,
+.infoGl {
+    font-size: 140%;
+}
+  
+h1.heading {
+    font-size: 180%;
+}
+
+  .loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+  }
+
+  .loader::after {
+    content: "";
+    border: 16px solid #dc3545; /* Light grey */
+    border-top: 16px solid #007bff;
+    border-right: 16px solid #28a745;
+    border-bottom: 16px solid #fd7e14;
+    border-radius: 50%;
+    width: 155px;
+    height: 155px;
+    animation: spin 2s linear infinite;
+    position: fixed; /* or absolute */
+    top: calc(50% - 77.5px);
+    left: calc(50% - 77.5px);
+  }
+
+  .pg-load {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      top: 0;
+      left: 0;
+  }
+
+.pg-load:before,
+.pg-load:after {
+    content: " ";
+    display: table;
+}
+.pg-load:after {
+    clear: both;
+}
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .sidebar {
+    width: 100%; 
+    height: 100%; 
+    background-color:#fff;
+    padding: 50px 10px;
+  }
+
+  .sidebar span {
+    height:100%; 
+    font-size:20px;
+  }
+
+  .sidebar span img {
+    display: block;
+    width: 120px;
+    margin: 15px auto;
+  }
+
+  .sidebar span h3 {
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .sidebar span h5 {
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .sidebar span ol li {
+    font-size: 16px;
+    counter-increment: my-awesome-counter;
+  }
+
+  .sidebar span ol {
+    list-style: none;
+    counter-reset: my-awesome-counter;
+  }
+
+  .sidebar span ol li::before {
+    content: counter(my-awesome-counter) ". ";
+    color: red;
+    font-weight: bold;
+  }
+  
+  table {
+    text-align: left;
+    position: relative;
+    background-color: #fff;
+  }
+
+  th {
+    position: sticky;
+    top: 0;
+  }
+
+  li.active {
+    /* font-weight: bold; */
+  }
+
+  #selectCountry option {
+    font-family: "BPG Arial", sans-serif;
+  }
+
+  @media only screen and (max-width: 767px) {
+    nav.changeonsm {
+      height: 120px !important; 
+    }
+  }
+
+
+  .autocomplete {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+  
+  .autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff; 
+    border-bottom: 1px solid #d4d4d4; 
+    font-family: "BPG Arial", sans-serif;
+  }
+
+  .autocomplete-items div strong {
+    font-family: "BPG Arial", sans-serif;
+  }
+  
+  /*when hovering an item:*/
+  .autocomplete-items div:hover {
+    background-color: #e9e9e9; 
+  }
+  
+  /*when navigating through the items using the arrow keys:*/
+  .autocomplete-active {
+    background-color: DodgerBlue !important; 
+    color: #ffffff; 
+  }
+
+  #allRecoveredPercent,
+  #allDeathPercent,
+  #allCasesPercent,
+  #nowCasePercent,
+  #allCasesGeoPercent,
+  #allRecoveredGeoPercent,
+  #nowCasesGeoPercent,
+  #allDeathGeoPercent,
+  #newCasesGeoPercent,
+  #newDeathGeoPercent,
+  #allCriticalGeoPercent,
+  #countryGlobPercent,
+  #allCasesGlobPercent,
+  #newCasesGlobPercent,
+  #newDeathGlobPercent,
+  #allRecoveredGlobPercent,
+  #nowCasesGlobPercent,
+  #allDeathGlobPercent,
+  #allCriticalGlobPercent,
+  #newCasePercent,
+  #newDeathPercent,
+  #allCriticaPercent {
+    font-size: 70%;
+    float: right;
+    position: absolute;
+    right: 1.25rem;
+    top: 1.25rem;
+  }
+
+
+ 
+  
+  
+  
+  
+  
+  
+  
+  
+  
