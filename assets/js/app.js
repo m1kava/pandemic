@@ -1,12 +1,6 @@
-// const url = 'https://coronavirus-19-api.herokuapp.com/all';
-const url = 'https://disease.sh/v2/all';
-
-
-const url2 = 'https://disease.sh/v2/countries?sort=cases';
-// const url2 = 'https://coronavirus-19-api.herokuapp.com/countries';
-//const url2 = 'https://corona.lmao.ninja/v2/countries?yesterday=true&sort=cases';
-// const url3 = 'https://coronavirus-19-api.herokuapp.com/countries/Georgia';
-const url3 = 'https://disease.sh/v2/countries/Georgia';
+const url = 'https://disease.sh/v2/all',
+      url2 = 'https://disease.sh/v2/countries?sort=cases',
+      url3 = 'https://disease.sh/v2/countries/Georgia';
 
 
 
@@ -23,7 +17,7 @@ const sendRequestGlobal = (method, url) => {
                 reject(response);
             } else {
                 resolve(response);
-            };
+            }
         };
 
         xhr.onerror = () => {
@@ -60,7 +54,7 @@ jQuery(document).ready(function() {
         if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
            return false;
         }
-      }
+      };
 
       document.addEventListener('contextmenu', function(e) {
         e.preventDefault();

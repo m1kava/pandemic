@@ -2,21 +2,21 @@
 sendRequestGlobal('GET', url3)
     .then(() => {
         //const casesPerMillion = document.getElementById('casesPerOneMillion');
-        const allCasesGeo = document.getElementById('allCasesGeo');
-        const newCasesGeo = document.getElementById('newCasesGeo');
-        const newDeathGeo = document.getElementById('newDeathGeo');
-        const allRecoveredGeo = document.getElementById('allRecoveredGeo');
-        const nowCaseGeo = document.getElementById('nowCaseGeo');
-        const allDeathGeo = document.getElementById('allDeathGeo');
-        const allCriticalGeo = document.getElementById('allCriticalGeo');
-        const georgiaPopulation = 3991542;
-        const allCasesGeoPercent = document.getElementById('allCasesGeoPercent');
-        const allRecoveredGeoPercent = document.getElementById('allRecoveredGeoPercent');
-        const nowCasesGeoPercent = document.getElementById('nowCasesGeoPercent');
-        const allDeathGeoPercent = document.getElementById('allDeathGeoPercent');
-        const newCasesGeoPercent = document.getElementById('newCasesGeoPercent');
-        const newDeathGeoPercent = document.getElementById('newDeathGeoPercent');
-        const allCriticalGeoPercent = document.getElementById('allCriticalGeoPercent');
+        const allCasesGeo = document.getElementById('allCasesGeo'),
+              newCasesGeo = document.getElementById('newCasesGeo'),
+              newDeathGeo = document.getElementById('newDeathGeo'),
+              allRecoveredGeo = document.getElementById('allRecoveredGeo'),
+              nowCaseGeo = document.getElementById('nowCaseGeo'),
+              allDeathGeo = document.getElementById('allDeathGeo'),
+              allCriticalGeo = document.getElementById('allCriticalGeo'),
+              georgiaPopulation = 3991542;
+              allCasesGeoPercent = document.getElementById('allCasesGeoPercent'),
+              allRecoveredGeoPercent = document.getElementById('allRecoveredGeoPercent'),
+              nowCasesGeoPercent = document.getElementById('nowCasesGeoPercent'),
+              allDeathGeoPercent = document.getElementById('allDeathGeoPercent'),
+              newCasesGeoPercent = document.getElementById('newCasesGeoPercent'),
+              newDeathGeoPercent = document.getElementById('newDeathGeoPercent'),
+              allCriticalGeoPercent = document.getElementById('allCriticalGeoPercent');
         
         allCasesGeo.innerHTML = response.cases;
         newCasesGeo.innerHTML = response.todayCases;

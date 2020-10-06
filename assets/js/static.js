@@ -1,21 +1,20 @@
 sendRequestGlobal('GET', url)
     .then(() => {
-        const allCases = document.getElementById('allCases');
-        const allDeath = document.getElementById('allDeath');
-        const allRecoverd = document.getElementById('allRecovered');
-        const nowCase = document.getElementById('nowCase');
-        const newCase = document.getElementById('newCase');
-        const newDeath = document.getElementById('newDeath');
-        const allCritical = document.getElementById('allCritical');
-
-        const allDeathPercent = document.getElementById('allDeathPercent');
-        const allRecoveredPercent = document.getElementById('allRecoveredPercent');
-        const worldPopulation = 7773763312;
-        const allCasesPercent = document.getElementById('allCasesPercent');
-        const nowCasePercent = document.getElementById('nowCasePercent');
-        const newCasePercent = document.getElementById('newCasePercent');
-        const newDeathPercent = document.getElementById('newDeathPercent');
-        const allCriticaPercent = document.getElementById('allCriticaPercent');
+        const allCases = document.getElementById('allCases'),
+              allDeath = document.getElementById('allDeath'),
+              allRecoverd = document.getElementById('allRecovered'),
+              nowCase = document.getElementById('nowCase'),
+              newCase = document.getElementById('newCase'),
+              newDeath = document.getElementById('newDeath'),
+              allCritical = document.getElementById('allCritical'),
+              allDeathPercent = document.getElementById('allDeathPercent'),
+              allRecoveredPercent = document.getElementById('allRecoveredPercent'),
+              worldPopulation = 7773763312,
+              allCasesPercent = document.getElementById('allCasesPercent'),
+              nowCasePercent = document.getElementById('nowCasePercent'),
+              newCasePercent = document.getElementById('newCasePercent'),
+              newDeathPercent = document.getElementById('newDeathPercent'),
+              allCriticaPercent = document.getElementById('allCriticaPercent');
 
 
         allCases.innerHTML = response.cases.toLocaleString();
