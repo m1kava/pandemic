@@ -1,0 +1,12 @@
+<!--meta {"title": "ქვეყნები", "description": "კორონა ვირუსის (COVID-19) დეტალური სტატისტიკა ნებისმიერი ქვეყნისთვის: ქრონოლოგია, პიკები, ვაქცინაცია, მაჩვენებლები 1 მილიონ მოსახლეზე.", "nav": "countries", "page": "countries", "preload": ["data/countries.json", "data/all.json"]} -->
+<form class="picker" role="search" data-picker>
+  <label for="country" class="sr-only">ქვეყნის ძებნა</label>
+  <div class="search-field">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="country" name="country" type="search" list="country-list" autocomplete="off" placeholder="მოძებნეთ ქვეყანა — მაგ. საფრანგეთი" enterkeyhint="search">
+    <datalist id="country-list"></datalist>
+  </div>
+  <div class="chips" data-chips aria-label="სწრაფი არჩევანი"></div>
+</form>
+
+<div data-country aria-live="polite"></div>

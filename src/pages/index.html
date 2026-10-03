@@ -1,26 +1,42 @@
-<!--meta {"title": "ქვეყნები", "description": "კორონა ვირუსის (COVID-19) განახლებადი სტატისტიკა ქვეყნების მიხედვით — დაავადებული, გამოჯანმრთელებული, გარდაცვლილი, კრიტიკული.", "nav": "index", "page": "countries", "data": true} -->
-<div class="page-head">
-  <div>
-    <p class="eyebrow">COVID-19</p>
-    <h1>სტატისტიკა ქვეყნების მიხედვით</h1>
+<!--meta {"title": "COVID-19 სტატისტიკა", "description": "კორონა ვირუსის (COVID-19) დეტალური სტატისტიკა ქართულად: მსოფლიო, კონტინენტები, ქვეყნები, ქრონოლოგია და ვაქცინაცია.", "nav": "index", "page": "overview", "preload": ["data/all.json", "data/countries.json", "data/history/world.json"]} -->
+<section class="hero">
+  <div class="hero-main">
+    <p class="eyebrow">COVID-19 · მსოფლიო</p>
+    <h1 class="hero-title">დადასტურებული შემთხვევები მსოფლიოში</h1>
+    <p class="hero-figure" data-hero>&nbsp;</p>
+    <p class="hero-meta" data-hero-meta>&nbsp;</p>
   </div>
-  <p class="updated" data-updated aria-live="polite"></p>
-</div>
+  <a class="card ge-spot" href="georgia.html" data-ge-spot aria-label="საქართველოს სტატისტიკა">
+    <span class="ge-spot-head"><span class="flag" aria-hidden="true">🇬🇪</span> საქართველო</span>
+    <span class="ge-spot-body" data-ge-body><span class="skeleton-line"></span><span class="skeleton-line"></span></span>
+    <span class="ge-spot-link">დეტალურად →</span>
+  </a>
+</section>
 
-<div class="layout">
-  <div class="content">
-    <form class="picker panel" role="search" data-picker>
-      <label for="country">შეიყვანეთ ქვეყანა ან აირჩიეთ სიიდან</label>
-      <div class="picker-row">
-        <input id="country" name="country" type="search" list="country-list" autocomplete="off" placeholder="მაგალითად: საქართველო" enterkeyhint="search">
-        <datalist id="country-list"></datalist>
-        <button type="submit" class="btn">ნახვა</button>
-      </div>
-      <div class="chips" data-chips aria-label="სწრაფი არჩევანი"></div>
-    </form>
+<div class="kpis" data-kpis aria-live="polite"></div>
 
-    <h2 class="section-title" data-country-title>იტვირთება…</h2>
-    <div class="stats" data-stats aria-live="polite"></div>
+<section class="card chart-card" data-timeline aria-label="მსოფლიო ქრონოლოგია"></section>
+
+<section class="section">
+  <div class="section-head">
+    <h2>რეიტინგი</h2>
+    <div class="segmented" role="group" aria-label="მაჩვენებელი" data-rank-metric>
+      <button type="button" data-value="cases" aria-pressed="true">შემთხვევები</button>
+      <button type="button" data-value="deaths" aria-pressed="false">გარდაცვალება</button>
+      <button type="button" data-value="casesPerOneMillion" aria-pressed="false">1 მლნ-ზე</button>
+    </div>
   </div>
-  {{aside}}
-</div>
+  <div class="grid-2">
+    <section class="card">
+      <h3 class="card-title">კონტინენტები</h3>
+      <div class="hbars" data-continents></div>
+    </section>
+    <section class="card">
+      <h3 class="card-title">ტოპ 10 ქვეყანა</h3>
+      <div class="hbars" data-top></div>
+      <a class="card-link" href="global.html">ყველა ქვეყანა →</a>
+    </section>
+  </div>
+</section>
+
+{{tips}}

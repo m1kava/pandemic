@@ -2,10 +2,13 @@
 
 COVID-19 statistics in Georgian: per-country stats, Georgia vs. the world, and a sortable table of all countries.
 
-* World / country stats with percentages
-* Georgia page with per-million comparison against the world
-* Searchable, sortable country table
-* Light and dark theme, mobile-first layout
+* **Overview** — world totals, day-by-day timeline (new cases, deaths, vaccine doses; daily or cumulative;
+  90 days / 1 year / full), continents and top-10 rankings
+* **Countries** — full detail for any country: key numbers, timeline, per-million figures, rates,
+  peaks, vaccination and comparison with the world (shareable links like `countries.html#FR`)
+* **Georgia** — the same detail page for Georgia
+* **Table** — every country with 13 columns, search, continent filter, sorting and CSV export
+* Light / dark / auto theme, mobile-first layout, keyboard-accessible charts
 
 ## How it works
 
@@ -16,6 +19,7 @@ A plain static site with **no frameworks and no runtime dependencies** (one smal
 * `src/assets/` — CSS, JS, images
 * `scripts/build.mjs` — zero-dependency build: assembles pages, minifies and fingerprints CSS/JS,
   and saves a snapshot of the data from [disease.sh](https://disease.sh) into `dist/data/`
+  (current totals, continents, and the day-by-day history of every country)
 
 In the browser the snapshot renders instantly, then fresh data is fetched from the live API in the
 background (and again every 5 minutes while the tab is open). If the API is down, the snapshot is shown.
