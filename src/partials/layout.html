@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}} · Pandemic.Ge</title>
+  <meta name="description" content="{{description}}">
+  <meta name="author" content="Vladimer Mikava">
+  <meta name="theme-color" content="#0f766e">
+  <meta name="color-scheme" content="light dark">
+  {{canonical}}
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{title}} · Pandemic.Ge">
+  <meta property="og:description" content="{{description}}">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/icon.png">
+  <link rel="preconnect" href="https://disease.sh" crossorigin>
+  {{preload}}
+  <link rel="stylesheet" href="{{css}}">
+  <!-- Georgian web fonts: loaded without blocking first paint -->
+  <link rel="preconnect" href="https://cdn.web-fonts.ge">
+  <link rel="stylesheet" href="https://cdn.web-fonts.ge/fonts/bpg-arial/css/bpg-arial.min.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdn.web-fonts.ge/fonts/bpg-extrasquare-mtavruli/css/bpg-extrasquare-mtavruli.min.css" media="print" onload="this.media='all'">
+  <script type="module" src="{{js}}"></script>
+</head>
+<body data-page="{{page}}">
+  <a class="skip" href="#main">გადასვლა შინაარსზე</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="./"><span class="brand-dot" aria-hidden="true"></span>Pandemic.Ge</a>
+      <nav class="nav" aria-label="მთავარი მენიუ">{{nav}}</nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    {{content}}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© {{year}} PANDEMIC.GE · მონაცემები: <a href="https://disease.sh" rel="noopener">disease.sh</a></p>
+      <p class="share">
+        <a href="https://www.facebook.com/Pandemic.Ge" rel="noopener">Facebook</a>
+        <button type="button" class="link-btn" data-share>გაზიარება</button>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

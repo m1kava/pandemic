@@ -1,0 +1,46 @@
+<!--meta {"title": "მსოფლიო", "description": "კორონა ვირუსის (COVID-19) მსოფლიო სტატისტიკა და ყველა ქვეყნის ცხრილი.", "nav": "global", "page": "global", "data": true} -->
+<div class="page-head">
+  <div>
+    <p class="eyebrow">COVID-19</p>
+    <h1>მსოფლიოს სტატისტიკა</h1>
+  </div>
+  <p class="updated" data-updated aria-live="polite"></p>
+</div>
+
+<div class="layout">
+  <div class="content">
+    <div class="stats" data-stats aria-live="polite"></div>
+  </div>
+  {{aside}}
+</div>
+
+<section class="panel table-panel">
+  <div class="table-tools">
+    <h2>ყველა ქვეყანა</h2>
+    <label class="filter">
+      <span class="sr-only">ფილტრაცია ქვეყნის მიხედვით</span>
+      <input type="search" data-filter placeholder="ფილტრი: მაგ. საქართველო" autocomplete="off">
+    </label>
+  </div>
+  <div class="table-scroll">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th scope="col" class="num">#</th>
+          <th scope="col"><button type="button" data-sort="name">ქვეყანა</button></th>
+          <th scope="col" class="num" aria-sort="descending"><button type="button" data-sort="cases">სულ</button></th>
+          <th scope="col" class="num"><button type="button" data-sort="todayCases">ახალი</button></th>
+          <th scope="col" class="num"><button type="button" data-sort="deaths">გარდაცვლილი</button></th>
+          <th scope="col" class="num"><button type="button" data-sort="todayDeaths">ახალი გარდ.</button></th>
+          <th scope="col" class="num"><button type="button" data-sort="recovered">გამოჯანმრთ.</button></th>
+          <th scope="col" class="num"><button type="button" data-sort="active">აქტიური</button></th>
+          <th scope="col" class="num"><button type="button" data-sort="critical">კრიტიკული</button></th>
+        </tr>
+      </thead>
+      <tbody data-rows>
+        <tr><td colspan="9" class="empty">იტვირთება…</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="muted table-count" data-count></p>
+</section>

@@ -1,0 +1,26 @@
+<!--meta {"title": "ქვეყნები", "description": "კორონა ვირუსის (COVID-19) განახლებადი სტატისტიკა ქვეყნების მიხედვით — დაავადებული, გამოჯანმრთელებული, გარდაცვლილი, კრიტიკული.", "nav": "index", "page": "countries", "data": true} -->
+<div class="page-head">
+  <div>
+    <p class="eyebrow">COVID-19</p>
+    <h1>სტატისტიკა ქვეყნების მიხედვით</h1>
+  </div>
+  <p class="updated" data-updated aria-live="polite"></p>
+</div>
+
+<div class="layout">
+  <div class="content">
+    <form class="picker panel" role="search" data-picker>
+      <label for="country">შეიყვანეთ ქვეყანა ან აირჩიეთ სიიდან</label>
+      <div class="picker-row">
+        <input id="country" name="country" type="search" list="country-list" autocomplete="off" placeholder="მაგალითად: საქართველო" enterkeyhint="search">
+        <datalist id="country-list"></datalist>
+        <button type="submit" class="btn">ნახვა</button>
+      </div>
+      <div class="chips" data-chips aria-label="სწრაფი არჩევანი"></div>
+    </form>
+
+    <h2 class="section-title" data-country-title>იტვირთება…</h2>
+    <div class="stats" data-stats aria-live="polite"></div>
+  </div>
+  {{aside}}
+</div>
