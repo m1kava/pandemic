@@ -1,46 +1,50 @@
-<!--meta {"title": "მსოფლიო", "description": "კორონა ვირუსის (COVID-19) მსოფლიო სტატისტიკა და ყველა ქვეყნის ცხრილი.", "nav": "global", "page": "global", "data": true} -->
+<!--meta {"title": "ყველა ქვეყანა", "description": "კორონა ვირუსის (COVID-19) სტატისტიკა ყველა ქვეყნისთვის ერთ ცხრილში: ფილტრი, დალაგება, CSV ჩამოტვირთვა.", "nav": "global", "page": "global", "preload": ["data/countries.json"]} -->
 <div class="page-head">
   <div>
     <p class="eyebrow">COVID-19</p>
-    <h1>მსოფლიოს სტატისტიკა</h1>
+    <h1>ყველა ქვეყანა</h1>
   </div>
   <p class="updated" data-updated aria-live="polite"></p>
 </div>
 
-<div class="layout">
-  <div class="content">
-    <div class="stats" data-stats aria-live="polite"></div>
+<div class="toolbar">
+  <div class="search-field">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <label class="sr-only" for="filter">ფილტრაცია ქვეყნის მიხედვით</label>
+    <input id="filter" type="search" data-filter placeholder="ფილტრი: მაგ. საქართველო" autocomplete="off">
   </div>
-  {{aside}}
+  <div class="chips" data-continent-chips aria-label="კონტინენტი"></div>
+  <button type="button" class="btn btn-ghost" data-csv>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"/></svg>
+    CSV
+  </button>
 </div>
 
-<section class="panel table-panel">
-  <div class="table-tools">
-    <h2>ყველა ქვეყანა</h2>
-    <label class="filter">
-      <span class="sr-only">ფილტრაცია ქვეყნის მიხედვით</span>
-      <input type="search" data-filter placeholder="ფილტრი: მაგ. საქართველო" autocomplete="off">
-    </label>
-  </div>
+<section class="card table-card">
   <div class="table-scroll">
     <table class="data-table">
       <thead>
         <tr>
           <th scope="col" class="num">#</th>
-          <th scope="col"><button type="button" data-sort="name">ქვეყანა</button></th>
-          <th scope="col" class="num" aria-sort="descending"><button type="button" data-sort="cases">სულ</button></th>
+          <th scope="col" class="sticky-col"><button type="button" data-sort="name">ქვეყანა</button></th>
+          <th scope="col" class="num" aria-sort="descending"><button type="button" data-sort="cases">შემთხვევა</button></th>
           <th scope="col" class="num"><button type="button" data-sort="todayCases">ახალი</button></th>
-          <th scope="col" class="num"><button type="button" data-sort="deaths">გარდაცვლილი</button></th>
+          <th scope="col" class="num"><button type="button" data-sort="deaths">გარდაცვალება</button></th>
           <th scope="col" class="num"><button type="button" data-sort="todayDeaths">ახალი გარდ.</button></th>
           <th scope="col" class="num"><button type="button" data-sort="recovered">გამოჯანმრთ.</button></th>
           <th scope="col" class="num"><button type="button" data-sort="active">აქტიური</button></th>
           <th scope="col" class="num"><button type="button" data-sort="critical">კრიტიკული</button></th>
+          <th scope="col" class="num"><button type="button" data-sort="casesPerOneMillion">შემთხ./1მლნ</button></th>
+          <th scope="col" class="num"><button type="button" data-sort="deathsPerOneMillion">გარდ./1მლნ</button></th>
+          <th scope="col" class="num"><button type="button" data-sort="cfr">ლეტალობა</button></th>
+          <th scope="col" class="num"><button type="button" data-sort="tests">ტესტები</button></th>
+          <th scope="col" class="num"><button type="button" data-sort="population">მოსახლეობა</button></th>
         </tr>
       </thead>
       <tbody data-rows>
-        <tr><td colspan="9" class="empty">იტვირთება…</td></tr>
+        <tr><td colspan="14" class="empty">იტვირთება…</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="muted table-count" data-count></p>
+  <p class="table-foot muted" data-count></p>
 </section>
