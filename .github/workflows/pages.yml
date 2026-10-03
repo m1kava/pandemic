@@ -1,5 +1,8 @@
 name: Deploy to GitHub Pages
 
+# Builds the site and publishes ./dist to the `gh-pages` branch, which
+# GitHub Pages serves (Settings -> Pages -> Deploy from a branch -> gh-pages).
+
 on:
   push:
     branches: [main]
@@ -9,32 +12,21 @@ on:
     - cron: '17 3 * * *'
   workflow_dispatch:
 
-permissions:
-  contents: read
-
 concurrency:
   group: pages-${{ github.ref }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    outputs:
-      pages_enabled: ${{ steps.pages.outcome == 'success' }}
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
-
-      - name: Configure Pages
-        id: pages
-        if: github.event_name != 'pull_request'
-        # Fails until Pages is enabled in the repo settings; the build itself
-        # doesn't need it, so keep going and report it clearly at deploy time.
-        continue-on-error: true
-        uses: actions/configure-pages@v5
 
       - name: Check JavaScript syntax
         run: node --check scripts/build.mjs && node --check src/assets/js/app.js
@@ -42,31 +34,18 @@ jobs:
       - name: Build site
         run: node scripts/build.mjs
         env:
-          SITE_URL: ${{ steps.pages.outputs.base_url || format('https://{0}.github.io/{1}', github.repository_owner, github.event.repository.name) }}
+          SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
 
-      - name: Upload artifact
-        if: github.event_name != 'pull_request'
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
-
-  deploy:
-    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Check that GitHub Pages is enabled
-        if: needs.build.outputs.pages_enabled != 'true'
+      - name: Publish to gh-pages branch
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        working-directory: dist
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          echo "::error title=GitHub Pages is not enabled::Open Settings -> Pages -> Build and deployment, set Source to 'GitHub Actions', then re-run this workflow."
-          exit 1
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          git init -q -b gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Deploy ${GITHUB_SHA::7}"
+          git push -q --force "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
+          echo "::notice title=Published::Site pushed to gh-pages -> https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/"
